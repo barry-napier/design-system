@@ -11,6 +11,7 @@
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.23.0",
+    "@release-it/conventional-changelog": "^10.0.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.23.0",
@@ -22,6 +23,7 @@
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "release-it": "^18.1.2",
     "typescript-eslint": "^8.29.0"
   },
   "lint-staged": {
@@ -33,6 +35,25 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "conventionalcommits",
+        "infile": "CHANGELOG.md"
+      }
+    },
+    "git": {
+      "commitMessage": "chore: release v${version}",
+      "tagName": "v${version}",
+      "push": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "github": {
+      "release": true
     }
   }
 }
