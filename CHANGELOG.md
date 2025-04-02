@@ -1,5 +1,11 @@
 # Changelog
 
+## <small>0.0.3 (2025-04-02)</small>
+
+* chore: add GitHub Actions workflow for automated releases ([f2c670f](https://github.com/barry-napier/design-system/commit/f2c670f))
+* chore: update GitHub Actions workflow to use GH_RELEASE_PAT for releases ([9fa7dfb](https://github.com/barry-napier/design-system/commit/9fa7dfb))
+* chore: update GitHub Actions workflow to use GH_RELEASE_PAT for releases ([35d9d39](https://github.com/barry-napier/design-system/commit/35d9d39))
+
 ## <small>0.0.2 (2025-04-02)</small>
 
 * chore: add commitlint and Husky for commit message validation ([c5105c9](https://github.com/barry-napier/design-system/commit/c5105c9))
