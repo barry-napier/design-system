@@ -2,15 +2,25 @@
   "name": "@aflac/design-system",
   "version": "0.0.1",
   "description": "A design system for Aflac",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "author": "Barry Napier",
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "globals": "^16.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript-eslint": "^8.29.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
