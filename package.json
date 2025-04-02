@@ -2,7 +2,10 @@
   "name": "@aflac/design-system",
   "version": "0.0.1",
   "description": "A design system for Aflac",
-  "scripts": {
-  },
-  "author": "Barry Napier"
+  "scripts": {},
+  "author": "Barry Napier",
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  }
 }
