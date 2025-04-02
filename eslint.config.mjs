@@ -1,21 +1,31 @@
-import { defineConfig } from "eslint/config";
-import globals from "globals";
-import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import prettier from "eslint-config-prettier";
-import prettierPlugin from "eslint-plugin-prettier";
+import eslint from '@eslint/js';
+import prettier from 'eslint-config-prettier';
+import globals from 'globals';
+import { defineFlatConfig } from 'eslint-define-config';
 
-export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,ts}"] },
-  {
-    files: ["**/*.{js,mjs,cjs,ts}"],
-    languageOptions: { globals: globals.browser },
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts}"],
-    plugins: { js, prettier: prettierPlugin },
-    extends: ["js/recommended", "plugin:prettier/recommended"],
-  },
-  tseslint.configs.recommended,
+export default defineFlatConfig([
+  eslint.configs.recommended,
   prettier,
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      // Add custom rules here
+    }
+  },
+  {
+    files: ['**/*.{cjs,js}'],
+    languageOptions: {
+      sourceType: 'commonjs',
+      globals: {
+        ...globals.node,
+      },
+    },
+  }
 ]);
